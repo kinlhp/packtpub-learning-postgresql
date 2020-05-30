@@ -1,0 +1,15 @@
+root=true
+
+[*]
+charset=utf-8
+end_of_line=lf
+insert_final_newline=true
+
+[*.{adoc,md}]
+indent_style=tab
+indent_size=4
+
+# https://docs.telemetry.mozilla.org/concepts/sql_style.html
+[*.{sql,yml}]
+indent_style=space
+indent_size=2

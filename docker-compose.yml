@@ -1,0 +1,18 @@
+version: '3.7'
+networks:
+  packtpub:
+    name: packtpub
+    driver: bridge
+services:
+  postgresql:
+    env_file:
+      - .env
+    image: postgres:12.3-alpine
+    container_name: packtpub-postgresql
+    volumes:
+      - $HOME/.docker/volumes/packtpub/postgresql/data:/var/lib/postgresql/data
+    networks:
+      - packtpub
+    ports:
+      - 5432:5432
+    restart: on-failure
